@@ -65,7 +65,8 @@ def get_book_by_title(title):
         if val.get("title") == title:
             book = val
             break
-    return jsonify(book)
+    # return jsonify(book)
+    return render_template("book_by_title.htm", book=book)
 
 
 if __name__ == "__main__":
