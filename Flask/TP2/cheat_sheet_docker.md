@@ -9,3 +9,5 @@
 - exec : La commande **docker exec** permet d'executer une commande dans le conteneur (ex : conteneur avec une image Ubuntu => faire une commande)
 
 - port : Un port permet de mapper le port local avec le port virtuel
+
+- Utilité du requirements.txt : Le requirements.txt permet de récupérer la liste des paquets installés

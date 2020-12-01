@@ -36,7 +36,7 @@ app = Flask(__name__)
 #     }
 # ]
 
-books = json.load(open("../Data/books.json"))
+books = json.load(open("./Data/books.json"))
 
 
 @app.route("/")
