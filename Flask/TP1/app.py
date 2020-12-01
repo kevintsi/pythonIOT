@@ -36,7 +36,7 @@ app = Flask(__name__)
 #     }
 # ]
 
-books = json.load(open("./Data/books.json"))
+books = json.load(open("Data/books.json"))
 
 
 @app.route("/")
@@ -70,4 +70,4 @@ def get_book_by_title(title):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
