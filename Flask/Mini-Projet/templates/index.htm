@@ -1,0 +1,22 @@
+{% extends 'base.htm' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <h3>Bienvenue sur ConseilleurVoyage</h3>
+
+    <h1>Liste des hôtels</h1>
+    <div>
+        {% for hotel in hotels %}
+            <div>
+                <div><a href="/hotel/{{ hotel.id }}"><h2>{{ hotel.name }}</h2></a></div>
+                <img src="{{ hotel.urlHotelImage }}"/>
+                <div>Pays : {{ hotel.country }}</div>
+                <div>Note : {{ hotel.note }} sur 5</div>
+            </div>
+        {% else %}
+            <h3>Nous n'avons pas d'hôtels dans notre base de données</h3>
+        {% endfor %}
+    </div>
+{% endblock %}
