@@ -50,14 +50,14 @@ def get_books():
     return jsonify(books)
 
 
-# @app.route("/api/book/<int:id>", methods=["GET"])
-# def get_book(id):
-#     book = None
-#     for val in books:
-#         if val.get("id") == id:
-#             book = val
-#             break
-#     return jsonify(book)
+@app.route("/api/book/<int:id>", methods=["GET"])
+def get_book(id):
+     book = None
+     for val in books:
+         if val.get("isbn") == str(id):
+             book = val
+             break
+     return jsonify(book)
 
 @app.route("/api/book/<string:title>", methods=["GET"])
 def get_book_by_title(title):
