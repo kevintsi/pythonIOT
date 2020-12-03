@@ -6,8 +6,11 @@
     {{ super() }}
     <h1>{{ hotel.name }} </h1>
     <div>
-    Adresse : {{ hotel.address }}
-    Pays : {{ hotel.country }}
-    <img src="{{ hotel.urlHotelImage }}" alt="{{ hotel.name }}"/>
+        <img src="{{ hotel.urlHotelImage }}" alt="{{ hotel.name }}"/>
+        <div>
+            Adresse : {{ hotel.address }}<br>
+            Pays : {{ hotel.country }}<br>
+            Note : {{ hotel.note }}
+        </div>
     </div>
 {% endblock %}

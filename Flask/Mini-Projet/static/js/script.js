@@ -1,4 +1,3 @@
-console.log("test")
 window.onload = () => {
     document.getElementById("hotelSearch").oninput = async (e) => {
         console.log("value change "+e.target.value)
@@ -9,8 +8,10 @@ window.onload = () => {
                 response = await fetch("/hotel/name/"+e.target.value)
                 data = await response.json()
                 var ul = document.createElement("ul")
+                ul.className = "list-group"
                 data.forEach((hotel) => {
                     var li = document.createElement("li")
+                    li.className = "list-group-item"
                     var a = document.createElement("a")
                     a.innerHTML = hotel.name
                     a.href = "/hotel/"+hotel.id
