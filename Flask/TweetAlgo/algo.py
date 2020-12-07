@@ -4,14 +4,14 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/predict", methods=["GET"])
+@app.route("/predict", methods=["POST"])
 def predict():
     clt = load("algo_classification.joblib")
-    array_tweet = [request.args.get("tweet")]
+    array_tweet = [request.form["tweet"]]
     print("TYPE :  {}".format(type(array_tweet)))
-    predict_value = clt.predict(array_tweet)
-    print("PREDICT : {}".format(predict_value))
-    return render_template("form_add_tweet.htm", value=predict_value[0])
+    predict_value = clt.predict_proba([str(array_tweet)])[0]
+    print(predict_value)
+    return render_template("result.htm", value=predict_value)
     
 @app.route("/")
 def add_tweet():
